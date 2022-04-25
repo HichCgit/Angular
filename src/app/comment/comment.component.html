@@ -1,0 +1,12 @@
+<div>
+    <div class="comment">
+
+    </div>
+
+    <form [formGroup]="commentForm" (ngSubmit)="sendComment()">
+        <input type="text" placeholder="Contenu" formControlName="contenu">
+        <input type="submit" value="Add comments">
+
+    </form>
+
+</div>

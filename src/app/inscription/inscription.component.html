@@ -1,0 +1,10 @@
+<div>
+    <form [formGroup]="inscriptionForm" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="pseudo" formControlName="pseudo">
+        <input type="text" placeholder="Email" formControlName="email">
+        <input type="text" placeholder="mot de passe" formControlName="password">
+        <input type="text" placeholder="Confirmer le mot de passe">
+
+        <input type="submit" value="Connexion">
+    </form>
+</div>

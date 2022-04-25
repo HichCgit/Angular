@@ -1,0 +1,37 @@
+<div class="form">
+
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Titre" formControlName="titre">
+        <input type="text" placeholder="Contenu" formControlName="contenu">
+        <input type="submit" value="Ajouter">
+
+    </form>
+
+
+</div>
+<div class="pageArticle">
+    <div class="article" *ngFor="let article of articleList">
+        <h2>{{article.titre}}</h2>
+        <p>{{article.contenu}}</p>
+
+        <div *ngFor="let user of userList">
+            <p *ngIf="article.id === user.id ">
+                Ecrit par : {{user.pseudo}}
+            </p>
+        </div>
+        <div *ngIf="article.id === userID">
+            <button (click)="deleteArticle(article.id_article)">Supprimer</button>
+            <button>Modifier</button>
+        </div>
+        <div *ngFor="let comment of commentList">
+            <p>ok</p>
+            <ng-container *ngIf="comment.id_article === article.id_article">
+
+                <p>{{comment.id_article}}</p>
+            </ng-container>
+        </div>
+        <app-comment></app-comment>
+
+    </div>
+
+</div>

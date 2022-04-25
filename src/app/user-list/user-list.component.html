@@ -1,0 +1,12 @@
+<div class="list">
+    <div class="box" *ngFor="let user of userList">
+        <p>{{user.pseudo}}</p>
+        <ng-container *ngIf="user.id === userID">
+            <button (click)="onSubmit(userID)" style="background-color:rgba(255, 0, 0, 0.575);">Supprimer</button>
+        </ng-container>
+
+
+
+    </div>
+
+</div>

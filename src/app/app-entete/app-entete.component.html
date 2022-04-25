@@ -1,0 +1,18 @@
+<header>
+    <div class="nvb">
+        <h2>AngularSocial</h2>
+
+        <div class="container" *ngIf=isLogin>
+
+            <div> <a routerLink="/user/list">Liste Utilisateurs</a></div>
+            <div><a routerLink="/article/list">Listes Articles</a></div>
+            <div><a routerLink="/" (click)="logout()"> Deconnection</a></div>
+
+        </div>
+        <div class=" container" *ngIf="isLogin === false">
+            <div> <a routerLink="/">Connexion</a></div>
+            <div> <a routerLink="/inscription">Inscription</a></div>
+        </div>
+    </div>
+
+</header>
